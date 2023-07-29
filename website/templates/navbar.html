@@ -1,0 +1,20 @@
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">Django CRM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarID">
+                {% if user.is_authenticated %}
+                    <div class="navbar-nav">
+                        <a class="nav-link muted" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                    </div>
+                {% else %}
+                    <div class="navbar-nav">
+                        <a class="nav-link muted" aria-current="page" href="{% url 'home' %}">Login</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </nav>

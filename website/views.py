@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from .forms import SingUpForm
-
+from .models import Record
 def home(request):
+    records = Record.objects.all()
     
     # if login in
     if request.method == 'POST':
@@ -16,10 +17,10 @@ def home(request):
             messages.success(request, 'welcome back ' + username + ' you are logged successfully')
             return redirect('home')
         else:
-            messages.success(request, 'There was an error please try again')
+            messages.success(request, 'There was an error to login please try again')
             return redirect('home')
     else:
-        return render(request, 'home.html', {})
+        return render(request, 'home.html', {'records':records})
 
 
 def logout_user(request):

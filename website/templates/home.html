@@ -30,7 +30,7 @@
 
                   <tr>
                       <td>{{ record.id }}</td>
-                      <td>{{ record.first_name }} {{ record.last_name }}</td>
+                      <td><a class="text-decoration-none link-dark" href="{% url 'record' record.id %}"> {{ record.first_name }} {{ record.last_name }}</a></td>
                       <td>{{ record.email }}</td>
                       <td>{{ record.phone_number }}</td>
                       <td>{{ record.address }}</td>

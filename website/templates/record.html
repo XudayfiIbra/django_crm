@@ -36,6 +36,8 @@
     <br>
     <!-- record Back button-->
     <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+    <!--Update a record-->
+    <a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary">Update Record</a>
     <!-- record delete button-->
     <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
 {% endblock content %}

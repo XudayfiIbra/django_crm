@@ -7,7 +7,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarID">
                 {% if user.is_authenticated %}
-                    <div class="navbar-nav offset-md-7">
+                    {% comment %} <div class="navbar-nav offset-md-7">
                         <a class="nav-link" aria-current="page" href="#">Home</a>
                     </div>
                     <div class="navbar-nav">
@@ -18,15 +18,22 @@
                     </div>
                     <div class="navbar-nav">
                         <a class="nav-link" aria-current="page" href="#">Contact</a>
+                    </div> {% endcomment %}
+
+                     <!--add record-->
+                    <div class="navbar-nav offset-md-0">
+                        <a class="nav-link" aria-current="page" href="{% url 'add_record' %}">Add Record</a>
                     </div>
 
-                    <div class="navbar-nav offset-md-1">
+                    <div class="navbar-nav offset-md-0">
                         <a class="nav-link" aria-current="page" href="{% url 'logout' %}">Logout</a>
                     </div>
                 {% else %}
+                    <!--Register-->
                     <div class="navbar-nav offset-md-10">
                         <a class="nav-link" aria-current="page" href="{% url 'register' %}">Register</a>
                     </div>
+                    <!--Login-->
                     <div class="navbar-nav ">
                         <a class="nav-link" aria-current="page" href="{% url 'home' %}">Login</a>
                     </div>
